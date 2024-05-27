@@ -1,14 +1,14 @@
-import { useRef } from 'react'
-import { useFrame } from '@react-three/fiber'
+import {useRef} from 'react';
+import {useFrame} from '@react-three/fiber';
 //import { useControls } from 'leva'
 
 export default function Polyhedron(props) {
-  const ref = useRef()
+  const ref = useRef();
 
   useFrame((_, delta) => {
-    ref.current.rotation.x += 0.2 * delta
-    ref.current.rotation.y += 0.05 * delta
-  })
+    ref.current.rotation.x += 0.2 * delta;
+    ref.current.rotation.y += 0.05 * delta;
+  });
 
   // useControls(
   //   props.name,
@@ -37,5 +37,5 @@ export default function Polyhedron(props) {
     <mesh {...props} ref={ref} castShadow>
       <icosahedronGeometry args={[1, 1]} />
     </mesh>
-  )
+  );
 }
