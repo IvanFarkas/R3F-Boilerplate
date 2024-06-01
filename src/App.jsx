@@ -28,4 +28,4 @@ export default function App() {
   );
 }
 
-//useGLTF.preload(Models.map(({ url }) => url))
+//useGLTF.preload(Models.map(({url}) => url));
