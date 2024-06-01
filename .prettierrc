@@ -15,7 +15,7 @@
   "requirePragma": false,
   "jsonRecursiveSort": false,
   "jsonSortOrder": "none",
-  "multilineArraysWrapThreshold": 10,
+  "multilineArraysWrapThreshold": 4,
   "jsdocCommentLineStrategy": "singleLine",
   "tsdoc": true,
   "plugins": [

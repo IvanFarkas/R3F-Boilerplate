@@ -11,6 +11,7 @@ const Model = ({url}) => {
     scene.traverse((o) => {
       if (o.userData.prop) {
         annotations.push(
+          // Simulate a computer screen in your scene - https://codesandbox.io/p/sandbox/9keg6
           <Html key={o.uuid} position={[o.position.x, o.position.y, o.position.z]} distanceFactor={0.25}>
             <div className="annotation">{o.userData.prop}</div>
           </Html>,
