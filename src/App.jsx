@@ -1,6 +1,6 @@
 import {Canvas} from '@react-three/fiber';
 import {OrbitControls, Environment, ContactShadows} from '@react-three/drei';
-import {Shoe} from './Shoe';
+import Shoe from './Shoe';
 
 const App = () => {
   console.log('in app');
