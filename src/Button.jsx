@@ -5,7 +5,7 @@ import { Color } from 'three'
 
 const black = new Color('black')
 
-export default function Button(props) {
+const Button = (props) => {
   const ref = useRef()
   const [hovered, setHover] = useState(false)
   const [selected, setSelected] = useState(false)
@@ -27,15 +27,7 @@ export default function Button(props) {
   })
 
   return (
-    <mesh
-      {...props}
-      ref={ref}
-      onPointerDown={() => {
-        setSelected(!selected)
-      }}
-      onPointerOver={() => setHover(true)}
-      onPointerOut={() => setHover(false)}
-      castShadow>
+    <mesh {...props} ref={ref} onPointerDown={() => setSelected(!selected)} onPointerOver={() => setHover(true)} onPointerOut={() => setHover(false)} castShadow>
       <icosahedronGeometry />
       <meshPhysicalMaterial
         roughness={0}
@@ -47,3 +39,5 @@ export default function Button(props) {
     </mesh>
   )
 }
+
+export default Button;
