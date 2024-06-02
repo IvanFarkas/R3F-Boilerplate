@@ -4,6 +4,7 @@ import {useEffect, useRef} from 'react';
 const useKeyboard = () => {
   const keyMap = useRef({});
 
+  // Debug - getEventListeners(document)
   useEffect(() => {
     const onDocumentKey = (e) => (keyMap.current[e.code] = e.type === 'keydown');
     document.addEventListener('keydown', onDocumentKey);
