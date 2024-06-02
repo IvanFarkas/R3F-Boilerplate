@@ -1,15 +1,14 @@
 import {useEffect, useRef} from 'react';
-import {exp} from 'three/examples/jsm/nodes/Nodes.js';
 
+// See FPS Octree for custom hooks - https://sbcode.net/react-three-fiber/fps-octree
 const useKeyboard = () => {
   const keyMap = useRef({});
 
   useEffect(() => {
-    const onDocumentKey = (e) => {
-      keyMap.current[e.code] = e.type === 'keydown';
-    };
+    const onDocumentKey = (e) => (keyMap.current[e.code] = e.type === 'keydown');
     document.addEventListener('keydown', onDocumentKey);
     document.addEventListener('keyup', onDocumentKey);
+
     return () => {
       document.removeEventListener('keydown', onDocumentKey);
       document.removeEventListener('keyup', onDocumentKey);

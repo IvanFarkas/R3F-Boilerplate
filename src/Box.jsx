@@ -11,10 +11,16 @@ const Box = (props) => {
     keyMap['KeyD'] && selected && (ref.current.position.x += 1 * delta);
     keyMap['KeyW'] && selected && (ref.current.position.z -= 1 * delta);
     keyMap['KeyS'] && selected && (ref.current.position.z += 1 * delta);
+    keyMap['KeyQ'] && selected && (ref.current.position.y += 1 * delta);
+    keyMap['KeyZ'] && selected && (ref.current.position.y -= 1 * delta);
   });
 
+  const onPointerDown = () => {
+    setSelected(!selected);
+  };
+
   return (
-    <mesh ref={ref} {...props} onPointerDown={() => setSelected(!selected)}>
+    <mesh ref={ref} {...props} onPointerDown={onPointerDown}>
       <boxGeometry />
       <meshBasicMaterial color={0x00ff00} wireframe={!selected} />
     </mesh>
